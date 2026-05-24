@@ -6,7 +6,9 @@ matplotlib.pyplot.switch_backend("agg")
 print("=== ANALISIS DE TEMPERATURA GLOBAL ===\n")
 
 # - CARGAR Y LIMPIAR DATOS
-datos = pandas.read_csv("datos/monthly_csv.csv")
+RUTA_DATOS = "datos/"
+
+datos = pandas.read_csv(f"{RUTA_DATOS}monthly_csv.csv")
 datos_limpios = datos.dropna()
 
 # - INDICADORES
@@ -41,7 +43,7 @@ print(f"Registros con temperatura negativa: {temp_negativas} ({100 - porcentaje_
 # ---
 
 # - GRAFICO 1
-RUTA_PREDETERMINADA = "resultados/"
+RUTA_GRAFICA = "resultados/"
 
 print("\nGENERANDO GRAFICOS")
 matplotlib.pyplot.figure(figsize=(14, 6))
@@ -55,7 +57,7 @@ matplotlib.pyplot.ylabel("Anomalía de Temperatura (°C)", fontsize = 12)
 matplotlib.pyplot.legend(fontsize = 11)
 matplotlib.pyplot.grid(True, alpha = 0.3)
 matplotlib.pyplot.tight_layout()
-matplotlib.pyplot.savefig(f"{RUTA_PREDETERMINADA}evolucion_temperatura.png", dpi = 300, bbox_inches="tight")
+matplotlib.pyplot.savefig(f"{RUTA_GRAFICA}evolucion_temperatura.png", dpi = 300, bbox_inches="tight")
 print("Grafico 1: evolucion_temperatura.png")
 
 # - GRAFICO 2
@@ -69,7 +71,7 @@ matplotlib.pyplot.ylabel("Frecuencia", fontsize = 12)
 matplotlib.pyplot.legend(fontsize = 11)
 matplotlib.pyplot.grid(True, alpha = 0.3, axis = "y")
 matplotlib.pyplot.tight_layout()
-matplotlib.pyplot.savefig(f"{RUTA_PREDETERMINADA}distribucion_temperatura.png", dpi = 300, bbox_inches = "tight")
+matplotlib.pyplot.savefig(f"{RUTA_GRAFICA}distribucion_temperatura.png", dpi = 300, bbox_inches = "tight")
 print("Grafico 2: distribucion_temperatura.png")
 
 matplotlib.pyplot.close("all")

@@ -24,7 +24,7 @@ promedio, maxima, minima y se genera una visualización de la evolución tempora
 
 ## Instrucciones para ejecutar
 1. Asegúrate de tener Python instalado
-2. Instala las librerias necesarias: `pip3 install pandas matplotlib`
+2. Instala las librerias necesarias: `python -m pip install matplotlib`
 3. Ejecuta el script: `scripts/analisis_temperatura.py`
 4. Los graficos se guardaran en la carpeta `/resultados`
 
